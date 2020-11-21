@@ -128,7 +128,7 @@ def superimposed_img(image, heatmap):
 
 def frontend(gui = True):
     if gui:
-        im1 = Image.open('random.png')
+        im1 = Image.open('random.PNG')
         st.title('Swasthya setu')
         st.markdown('''A Deep Learning Application used to Analyze the presence of **_COVID-19_** in Patients. Healthcare sector is totally different from other industry. 
                 It is on high priority sector and people expect highest level of care and services regardless of cost. 
