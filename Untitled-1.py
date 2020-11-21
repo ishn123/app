@@ -9,7 +9,7 @@ import sqlite3 as cn
 import hashlib
 
 
-db = cn.connect('Data.db')
+db = cn.connect('D.db')
 connection = db.cursor()
 if connection:
     print('Connection established')
