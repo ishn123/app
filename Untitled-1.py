@@ -9,7 +9,7 @@ import sqlite3 as cn
 import hashlib
 
 
-db = cn.connect(r'C:\Users\user\OneDrive\Desktop\Data.db')
+db = cn.connect('Data.db')
 connection = db.cursor()
 if connection:
     print('Connection established')
@@ -128,7 +128,7 @@ def superimposed_img(image, heatmap):
 
 def frontend(gui = True):
     if gui:
-        im1 = Image.open('C:\\Users\\user\\OneDrive\\Desktop\\random.png')
+        im1 = Image.open('random.png')
         st.title('Swasthya setu')
         st.markdown('''A Deep Learning Application used to Analyze the presence of **_COVID-19_** in Patients. Healthcare sector is totally different from other industry. 
                 It is on high priority sector and people expect highest level of care and services regardless of cost. 
@@ -191,7 +191,7 @@ def prediction():
     upload = st.file_uploader(label='',type = ['png','jpg','jpeg'])
     analyze = st.button('Analyze report')
     if analyze:
-        cnn_model = keras.models.load_model('E:\\My projects\\my_model.h5')
+        cnn_model = keras.models.load_model('my_model.h5')
         with st.spinner('Wait for a while'):
             img = Image.open(upload,'r')
             img = img.resize((224,224))
@@ -204,8 +204,8 @@ def prediction():
                 heatmap=make_gradcam_heatmap(img,cnn_model,last_conv_layer_name='conv_pw_13_relu',classifier_layer_names=['global_average_pooling2d','dense_1'])
                 ima = np.uint8(255 * img)
                 s_img = superimposed_img(ima,heatmap)
-                s_img.save(r'C:\Users\user\OneDrive\Desktop\img1.png')
-                display_img = Image.open(r'C:\Users\user\OneDrive\Desktop\img1.png','r')
+                s_img.save('img1.png')
+                display_img = Image.open('img1.png','r')
                 st.image(display_img,width = 150,caption = st.write('**_Red_** marks in X-ray indicates swelling in Bronchitis.'))
             else:
                 st.write('Your X-ray is **_Normal_**.')
