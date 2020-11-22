@@ -10,7 +10,7 @@ import psycopg2 as pg
 
 Database_url = 'postgres://yctlzmuuxmgyeo:8e1474edfd4c01994ff7f8b496b9fc3619f1c3e1f312b36e2295b0eb9a8aa85a@ec2-18-203-62-227.eu-west-1.compute.amazonaws.com:5432/d3v85adstclkte'
 
-db = pg.connect(Database_url,sslmode='require')
+db = pg.connect(Database_url)
 
 connection = db.cursor()
 if connection:
