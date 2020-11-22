@@ -46,6 +46,6 @@ def column_data(column_name = None):
         rows = connection.fetchall()
         return rows
 def two_columns_retrieval(user,passe):
-    connection.execute('''select * from Data where Username=? and password=?''',(user,passe))
+    connection.execute('''select * from Data where Username=%s and password=%s''',(user,passe))
     rows =  connection.fetchall()
     return rows
