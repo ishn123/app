@@ -1,1 +1,1 @@
-# app
+# app [![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://share.streamlit.io/ishn123/app/main/Untitled-1.py)
