@@ -90,7 +90,8 @@ def frontend(gui = True):
                 providing exciting solutions with good accuracy for medical imaging and is
                 seen as a key method for future applications in health sector. In this
                 chapter, we discussed state of the art deep learning architecture and its
-                optimization used for medical image segmentation and classification.''')
+                optimization used for medical image segmentation and classification.
+                © made by ISHAN ARORA CSE Department FET,GKV Haridwar''')
         st.image([im1],width=600)
         st.write('\n')
         st.subheader('Steps to upload your X-ray')

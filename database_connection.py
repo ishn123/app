@@ -1,10 +1,10 @@
 import psycopg2 as pg
 
 
-db = pg.connect(host='ec2-34-254-69-72.eu-west-1.compute.amazonaws.com',
-                database='de99tfrt5clchm',
-                user='hpunmriljsjtiw',
-                password='2f4f05495984ba1eb8c18bf65510805785c22fe88a5daa0f71eb90b915e5e668')
+db = pg.connect(host='ec2-34-198-223-125.compute-1.amazonaws.com',
+                database='dcj6rc24m2uosi',
+                user='gqcpefohdiotvm',
+                password='d75c41226a88b6bb8e68a6c30fde85b6592a1c5fbaf5e5b9ba6860136911ec24')
 
 connection = db.cursor()
 if connection:
