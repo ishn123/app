@@ -21,7 +21,7 @@ def create_user():
         password varchar NOT NULL
     )''')
     db.commit()
-    connection.close()
+    
 def add_user_data(first_name,last_name,emailaddress,user,password):
     connection.execute('''INSERT INTO Data(FirstName,LastName,emailaddress,Username,password) values (%s,%s,%s,%s,%s)''',(first_name,last_name,emailaddress,user,password))
     db.commit()
@@ -29,13 +29,13 @@ def add_user_data(first_name,last_name,emailaddress,user,password):
 def display_data():
     connection.execute('''SELECT * FROM Data''')
     rows = connection.fetchall()
-    connection.close()
+    
     return rows
 def delete_data():
     connection.execute('''delete from Data''')
     print('Deleted Successfully')
     db.commit()
-    connection.close()
+    
 def column_data(column_name = None):
     if column_name == 'emailaddress':
         connection.execute('''select emailaddress from Data''')
@@ -44,15 +44,15 @@ def column_data(column_name = None):
     elif column_name == 'username':
         connection.execute('''select Username from Data''')
         col = connection.fetchall()
-        connection.close()
+        
         return col
     else:
         connection.execute('''select * from Data''')
         rows = connection.fetchall()
-        connection.close()
+        
         return rows
 def two_columns_retrieval(user,passe):
     connection.execute('''select * from Data where Username=%s and password=%s''',(user,passe))
     rows =  connection.fetchall()
-    connection.close()
+    
     return rows
