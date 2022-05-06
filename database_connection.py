@@ -49,3 +49,4 @@ def two_columns_retrieval(user,passe):
     connection.execute('''select * from Data where Username=%s and password=%s''',(user,passe))
     rows =  connection.fetchall()
     return rows
+connection.close()
