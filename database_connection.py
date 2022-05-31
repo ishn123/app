@@ -25,7 +25,7 @@ def create_user():
 def add_user_data(first_name,last_name,emailaddress,user,password):
     connection.execute('''INSERT INTO Data(FirstName,LastName,emailaddress,Username,password) values (%s,%s,%s,%s,%s)''',(first_name,last_name,emailaddress,user,password))
     db.commit()
-    connection.close()
+
 def display_data():
     connection.execute('''SELECT * FROM Data''')
     rows = connection.fetchall()
