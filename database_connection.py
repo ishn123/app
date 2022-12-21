@@ -1,5 +1,5 @@
 import sqlite3
-db = sqlite3.connect("db")
+db = sqlite3.connect("db",check_same_thread = False)
 
 connection = None
 try:
