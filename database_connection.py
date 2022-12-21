@@ -22,7 +22,7 @@ def create_user():
 
 def add_user_data(first_name, last_name, emailaddress, user, password):
     connection.execute(
-        '''INSERT INTO Data(FirstName,LastName,emailaddress,Username,password) values (%s,%s,%s,%s,%s)''',
+        '''INSERT INTO Data(FirstName,LastName,emailaddress,Username,password) values (?,?,?,?,?);''',
         (first_name, last_name, emailaddress, user, password))
     db.commit()
 
@@ -62,3 +62,4 @@ def two_columns_retrieval(user, passe):
     rows = connection.fetchall()
 
     return rows
+
